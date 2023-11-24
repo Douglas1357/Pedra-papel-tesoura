@@ -1,0 +1,42 @@
+import random
+
+def jogo(escolha, maquina):
+    if escolha == 'tesoura' and maquina == 'pedra':
+        print ('você perdeu!')
+
+    elif escolha == 'tesoura' and maquina == 'papel':
+        print ('você ganhou!')
+
+    elif escolha == 'pedra' and maquina == 'tesoura':
+        print ('voce ganhou!')
+
+    elif escolha == 'pedra' and maquina == 'papel':
+        print ('você perdeu!')
+
+    elif escolha == 'papel' and maquina == 'pedra':
+        print('você ganhou!')
+
+    elif escolha == 'papel' and maquina == 'tesoura':
+        print ('voce ganhou!')
+    
+    else:
+        print('empate')
+
+
+def escolha_maquina():
+    option = ['pedra', 'papel', 'tesoura']
+    maquina = random.choice(option) 
+    return maquina
+
+def escolha_user():
+    escolha = (input('digite sua escolha: pedra, papel ou tesoura: ')).lower()
+    return escolha
+
+def loop():
+     while escolha_user() == 'fim':
+         print ('Fim do jogo')
+         break
+
+jogo(escolha_user(), escolha_maquina())
+
+resultado = jogo(escolha_user(), escolha_maquina())
